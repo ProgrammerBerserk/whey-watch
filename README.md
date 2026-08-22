@@ -158,7 +158,7 @@ O script corre em PowerShell 5.1 (Windows) e em PowerShell 7 (o runner Linux usa
 
 | Campo | Para que serve |
 |---|---|
-| `parser` | `jsonld` (Fitnis, Bulk, MyProtein, Prozis) ou `microdata` (Zumub) |
+| `parser` | `jsonld` (Fitnis, Bulk, MyProtein, EU Nutrition, Prozis) ou `microdata` (Zumub) |
 | `proteinPer100g` | **tira-o do rótulo**, é o que faz a matemática ser honesta |
 | `defaultGrams` | páginas de formato único |
 | `skuGrams` | páginas multi-formato: mapa SKU → gramas (usa `-Discover`) |
@@ -215,6 +215,16 @@ dois modos, claro e escuro.
 depois devolve `429` durante um bom período. Daí `checkEveryHours: 20` e
 `maxAttempts: 2` — desiste depressa e tenta amanhã. Quando falha, os outros alvos
 seguem normalmente. Se o vires sempre a falhar no log, é isso, não é bug.
+
+**A HSN não é vigiável e não vale a pena tentar.** A `hsnstore.pt` e a `hsnstore.eu`
+devolvem `403` a qualquer pedido — até à homepage, com um conjunto completo de
+cabeçalhos de browser. É um bloqueio no edge que rejeita tudo o que não seja um
+browser real. O KuantoKusta, que agregaria os preços dela, bloqueia da mesma forma.
+Passar por isso exigiria falsificar impressão digital de browser, o que é frágil e é
+evasão de detecção. Se quiseres os preços da HSN, é a olho no site.
+
+**A Bulk Powders é a Bulk.** Mudou de nome em 2020; está no config como
+`bulk-pure-whey`. Não a acrescentes outra vez.
 
 **Nenhum site é acedido com browser headless.** Se alguma loja passar a renderizar
 preços por JavaScript, o log escreve `nenhum preco extraido - o site pode ter mudado

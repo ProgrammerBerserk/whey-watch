@@ -88,9 +88,29 @@
       "alert": { "onNewLow": true, "maxEurPer100gProtein": 3.00, "dropPctVsMedian": 10, "onBackInStock": true }
     },
     {
+      "id": "eunutrition-muscle-whey",
+      "store": "EU Nutrition",
+      "name": "EU Nutrition Muscle Whey Protein",
+      "url": "https://eunutrition.com/muscle-whey-protein-2-kg/",
+      "parser": "jsonld",
+      "proteinPer100g": 73.5,
+      "defaultGrams": 2000,
+      "alert": { "onNewLow": true, "maxEurPer100gProtein": 4.30, "dropPctVsMedian": 8, "onBackInStock": true }
+    },
+    {
+      "id": "eunutrition-isolate",
+      "store": "EU Nutrition",
+      "name": "EU Nutrition 100% Whey Isolate",
+      "url": "https://eunutrition.com/100-whey-isolate-evolution-2-kg/",
+      "parser": "jsonld",
+      "proteinPer100g": 80.5,
+      "defaultGrams": 2000,
+      "alert": { "onNewLow": true, "maxEurPer100gProtein": 4.60, "dropPctVsMedian": 8, "onBackInStock": true }
+    },
+    {
       "id": "prozis-real-whey-2kg",
       "store": "Prozis",
-      "name": "Prozis 100% Real Whey Protein 2000g",
+      "name": "Prozis 100% Real Whey Protein",
       "url": "https://www.prozis.com/pt/pt/prozis/100-real-whey-protein-2000g",
       "parser": "jsonld",
       "proteinPer100g": 75,
