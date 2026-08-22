@@ -1,0 +1,8 @@
+* text=auto
+
+# LF obrigatorio: um \r num bloco run: do bash faz o step falhar, e o pwsh do
+# runner Linux tambem prefere LF
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.ps1  text eol=lf
+*.sh   text eol=lf
