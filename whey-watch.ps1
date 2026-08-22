@@ -605,15 +605,20 @@ foreach ($t in $targets) {
     # um intervalo minimo entre consultas, independente da cadencia do agendador
     $metaKey = 'meta::{0}' -f $t.id
     if ($tProps -contains 'checkEveryHours' -and $t.checkEveryHours -and -not $Force) {
-        if ($state.ContainsKey($metaKey) -and $state[$metaKey].lastCheckedAt) {
-            $ago = ($now - [datetime] $state[$metaKey].lastCheckedAt).TotalHours
+        if ($state.ContainsKey($metaKey) -and $state[$metaKey].lastAttemptAt) {
+            $ago = ($now - [datetime] $state[$metaKey].lastAttemptAt).TotalHours
             if ($ago -lt [double] $t.checkEveryHours) {
-                Write-Log ('   {0} / {1}: visto ha {2:N1}h, salto (checkEveryHours={3})' -f `
+                Write-Log ('   {0} / {1}: tentado ha {2:N1}h, salto (checkEveryHours={3})' -f `
                             $t.store, $t.name, $ago, $t.checkEveryHours)
                 continue
             }
         }
     }
+
+    # a tentativa e marcada ANTES de se saber o resultado. um alvo bloqueado de
+    # forma permanente - o Prozis rejeita gamas de datacenter - nao deve ser
+    # retentado a cada ronda nem sujar o "N/M lojas responderam" para sempre
+    $state[$metaKey] = @{ lastAttemptAt = $now.ToString('s') }
 
     try {
         $html = Get-Page -Url $t.url -MaxAttempts $attempts -MinGapSec $gap
@@ -636,9 +641,7 @@ foreach ($t in $targets) {
 
     $health += [pscustomobject]@{ Loja = $t.store; Alvo = $t.id; Estado = 'ok'; Nota = ('{0} ofertas' -f $offers.Count) }
 
-    # so marcar como consultado quando a pagina veio e deu precos, para que uma
-    # ronda falhada nao arraste o alvo para o proximo checkEveryHours
-    $state[$metaKey] = @{ lastCheckedAt = $now.ToString('s') }
+    $state[$metaKey] = @{ lastAttemptAt = $now.ToString('s'); lastOkAt = $now.ToString('s') }
 
     # resolver gramagem antes de colapsar
     foreach ($o in $offers) {
