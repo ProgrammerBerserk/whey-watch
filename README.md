@@ -66,20 +66,33 @@ mais correr no teu PC (ver *Correr localmente*).
 
 ### 3. Telegram
 
-Cria um bot com o [@BotFather](https://t.me/botfather) e guarda o token. Cria um grupo,
-mete lá o bot e a outra pessoa, e obtém o `chat_id`:
+1. Cria o bot com o [@BotFather](https://t.me/botfather) (`/newbot`) e guarda o token
+2. Cria o grupo e mete lá o bot e a outra pessoa
+3. **No grupo, escreve uma mensagem que comece por `/`** — ex.: `/ola`
+4. Corre:
 
-```bash
-curl "https://api.telegram.org/bot<TOKEN>/getUpdates"
+```powershell
+.\setup-telegram.ps1
 ```
 
-O `chat_id` de um grupo é negativo (ex.: `-1001234567890`). Em
-*Settings → Secrets and variables → Actions*, cria:
+O passo 3 não é capricho. Os bots do Telegram têm *privacy mode* ligado por omissão e
+**não recebem mensagens normais de grupo**; sem uma mensagem com `/` (ou a entrada do
+bot no grupo) o `getUpdates` devolve lista vazia e não há como descobrir o `chat_id`.
+
+O script pede o token de forma oculta, valida-o no `getMe`, lista as conversas
+encontradas, manda uma mensagem de teste ao grupo escolhido e grava os dois secrets
+via `gh` **por stdin** — para o token não ficar no histórico da shell nem visível na
+lista de processos. Nunca o escreve em ficheiro.
+
+Com `-NoSecrets` só descobre e mostra o `chat_id`, sem tocar no GitHub.
+
+Se preferires à mão, os secrets são estes, em *Settings → Secrets and variables →
+Actions*:
 
 | Secret | Valor |
 |---|---|
 | `TELEGRAM_BOT_TOKEN` | o token do BotFather |
-| `TELEGRAM_CHAT_ID` | o id do grupo |
+| `TELEGRAM_CHAT_ID` | o id do grupo (negativo, ex.: `-1001234567890`) |
 
 O script activa o Telegram só pela presença dos segredos — localmente, sem eles
 definidos, não tenta enviar nada.
