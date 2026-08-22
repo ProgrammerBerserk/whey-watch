@@ -1,0 +1,104 @@
+{
+  "settings": {
+    "minDomainGapSeconds": 6,
+    "maxAttempts": 4,
+    "historyKeep": 150,
+    "alertCooldownHours": 20,
+    "notify": {
+      "toast": true,
+      "telegram": {
+        "enabled": false,
+        "botTokenEnvVar": "TELEGRAM_BOT_TOKEN",
+        "chatIdEnvVar": "TELEGRAM_CHAT_ID",
+        "botToken": "",
+        "chatId": ""
+      },
+      "email": {
+        "enabled": false,
+        "smtpServer": "smtp.gmail.com",
+        "port": 587,
+        "useSsl": true,
+        "from": "",
+        "to": "",
+        "user": "",
+        "passwordEnvVar": "WHEYWATCH_SMTP_PASS"
+      }
+    }
+  },
+
+  "targets": [
+    {
+      "id": "fitnis-7n-whey80",
+      "store": "Fitnis",
+      "name": "7 Nutrition Whey Protein 80",
+      "url": "https://fitnis.pt/pt/proteinas/1178-7-nutrition-whey-protein-80-2kg.html",
+      "parser": "jsonld",
+      "proteinPer100g": 78,
+      "defaultGrams": 2000,
+      "alert": { "onNewLow": true, "maxEurPer100gProtein": 3.05, "dropPctVsMedian": 7, "onBackInStock": true }
+    },
+    {
+      "id": "zumub-concentrate",
+      "store": "Zumub",
+      "name": "Zumub 100% Whey Concentrate",
+      "url": "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326",
+      "parser": "microdata",
+      "proteinPer100g": 71.3,
+      "skuGrams": { "23974": 30, "10327": 500, "10326": 1000, "10328": 2000, "10384": 4000 },
+      "alert": { "onNewLow": true, "maxEurPer100gProtein": 4.20, "dropPctVsMedian": 7, "onBackInStock": true }
+    },
+    {
+      "id": "zumub-fusion",
+      "store": "Zumub",
+      "name": "Zumub Whey Protein Fusion",
+      "url": "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g",
+      "parser": "microdata",
+      "proteinPer100g": 66.7,
+      "skuGrams": { "28909": 500, "28910": 1000, "28982": 2000, "28983": 4000 },
+      "alert": { "onNewLow": true, "maxEurPer100gProtein": 3.50, "dropPctVsMedian": 7, "onBackInStock": true }
+    },
+    {
+      "id": "zumub-isolate",
+      "store": "Zumub",
+      "name": "Zumub 100% Whey Isolate",
+      "url": "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg",
+      "parser": "microdata",
+      "proteinPer100g": 87.3,
+      "skuGrams": { "9948": 30, "9126": 500, "9125": 1000, "21303": 900, "9138": 2000, "9158": 4000 },
+      "alert": { "onNewLow": true, "maxEurPer100gProtein": 4.60, "dropPctVsMedian": 7, "onBackInStock": true }
+    },
+    {
+      "id": "bulk-pure-whey",
+      "store": "Bulk",
+      "name": "Bulk Pure Whey Protein",
+      "url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000",
+      "parser": "jsonld",
+      "proteinPer100g": 71,
+      "gramsFromSkuRegex": "-(\\d{4})$",
+      "alert": { "onNewLow": true, "maxEurPer100gProtein": 3.80, "dropPctVsMedian": 8, "onBackInStock": false }
+    },
+    {
+      "id": "myprotein-impact",
+      "store": "MyProtein",
+      "name": "MyProtein Impact Whey Protein",
+      "url": "https://www.myprotein.pt/p/sports-nutrition/impact-whey-protein/11790616/",
+      "parser": "jsonld",
+      "proteinPer100g": 82,
+      "defaultGrams": 1000,
+      "alert": { "onNewLow": true, "maxEurPer100gProtein": 3.00, "dropPctVsMedian": 10, "onBackInStock": true }
+    },
+    {
+      "id": "prozis-real-whey-2kg",
+      "store": "Prozis",
+      "name": "Prozis 100% Real Whey Protein 2000g",
+      "url": "https://www.prozis.com/pt/pt/prozis/100-real-whey-protein-2000g",
+      "parser": "jsonld",
+      "proteinPer100g": 75,
+      "defaultGrams": 2000,
+      "minGapSeconds": 25,
+      "maxAttempts": 2,
+      "checkEveryHours": 20,
+      "alert": { "onNewLow": true, "maxEurPer100gProtein": 4.50, "dropPctVsMedian": 10, "onBackInStock": true }
+    }
+  ]
+}

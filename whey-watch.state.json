@@ -1,0 +1,382 @@
+﻿{
+    "meta::zumub-isolate":  {
+                                "lastCheckedAt":  "2026-08-22T21:23:05"
+                            },
+    "zumub-fusion::g1000":  {
+                                "label":  "Zumub Whey Protein Fusion (1kg)",
+                                "history":  [
+                                                {
+                                                    "t":  "2026-08-22T15:07:08",
+                                                    "p":  26.99,
+                                                    "a":  "InStock"
+                                                },
+                                                {
+                                                    "t":  "2026-08-22T21:23:05",
+                                                    "p":  26.99,
+                                                    "a":  "InStock"
+                                                }
+                                            ],
+                                "url":  "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g",
+                                "store":  "Zumub"
+                            },
+    "meta::zumub-fusion":  {
+                               "lastCheckedAt":  "2026-08-22T21:23:05"
+                           },
+    "fitnis-7n-whey80::g2000":  {
+                                    "label":  "7 Nutrition Whey Protein 80 (2kg)",
+                                    "history":  [
+                                                    {
+                                                        "t":  "2026-08-22T15:04:25",
+                                                        "p":  48.99,
+                                                        "a":  "OutOfStock"
+                                                    },
+                                                    {
+                                                        "t":  "2026-08-22T15:07:08",
+                                                        "p":  48.99,
+                                                        "a":  "OutOfStock"
+                                                    },
+                                                    {
+                                                        "t":  "2026-08-22T21:23:05",
+                                                        "p":  48.99,
+                                                        "a":  "OutOfStock"
+                                                    }
+                                                ],
+                                    "url":  "https://fitnis.pt/pt/proteinas/1178-7-nutrition-whey-protein-80-2kg.html",
+                                    "store":  "Fitnis"
+                                },
+    "zumub-isolate::g4000":  {
+                                 "label":  "Zumub 100% Whey Isolate (4kg)",
+                                 "history":  [
+                                                 {
+                                                     "t":  "2026-08-22T15:07:08",
+                                                     "p":  175.98,
+                                                     "a":  "InStock"
+                                                 },
+                                                 {
+                                                     "t":  "2026-08-22T21:23:05",
+                                                     "p":  175.98,
+                                                     "a":  "InStock"
+                                                 }
+                                             ],
+                                 "url":  "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg",
+                                 "store":  "Zumub"
+                             },
+    "meta::zumub-concentrate":  {
+                                    "lastCheckedAt":  "2026-08-22T21:23:05"
+                                },
+    "zumub-concentrate::g500":  {
+                                    "label":  "Zumub 100% Whey Concentrate (500g)",
+                                    "history":  [
+                                                    {
+                                                        "t":  "2026-08-22T15:07:08",
+                                                        "p":  19.96,
+                                                        "a":  "InStock"
+                                                    },
+                                                    {
+                                                        "t":  "2026-08-22T21:23:05",
+                                                        "p":  19.96,
+                                                        "a":  "InStock"
+                                                    }
+                                                ],
+                                    "url":  "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326",
+                                    "store":  "Zumub"
+                                },
+    "zumub-fusion::g2000":  {
+                                "label":  "Zumub Whey Protein Fusion (2kg)",
+                                "history":  [
+                                                {
+                                                    "t":  "2026-08-22T15:07:08",
+                                                    "p":  48.99,
+                                                    "a":  "InStock"
+                                                },
+                                                {
+                                                    "t":  "2026-08-22T21:23:05",
+                                                    "p":  48.99,
+                                                    "a":  "InStock"
+                                                }
+                                            ],
+                                "url":  "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g",
+                                "store":  "Zumub"
+                            },
+    "bulk-pure-whey::g5000":  {
+                                  "label":  "Bulk Pure Whey Protein (5kg)",
+                                  "history":  [
+                                                  {
+                                                      "t":  "2026-08-22T15:07:08",
+                                                      "p":  149.99,
+                                                      "a":  "InStock"
+                                                  },
+                                                  {
+                                                      "t":  "2026-08-22T21:23:05",
+                                                      "p":  149.99,
+                                                      "a":  "InStock"
+                                                  }
+                                              ],
+                                  "url":  "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000",
+                                  "store":  "Bulk"
+                              },
+    "bulk-pure-whey::g1000":  {
+                                  "label":  "Bulk Pure Whey Protein (1kg)",
+                                  "history":  [
+                                                  {
+                                                      "t":  "2026-08-22T15:07:08",
+                                                      "p":  34.99,
+                                                      "a":  "InStock"
+                                                  },
+                                                  {
+                                                      "t":  "2026-08-22T21:23:05",
+                                                      "p":  34.99,
+                                                      "a":  "InStock"
+                                                  }
+                                              ],
+                                  "url":  "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000",
+                                  "store":  "Bulk"
+                              },
+    "zumub-isolate::g2000":  {
+                                 "label":  "Zumub 100% Whey Isolate (2kg)",
+                                 "history":  [
+                                                 {
+                                                     "t":  "2026-08-22T15:07:08",
+                                                     "p":  89.97,
+                                                     "a":  "InStock"
+                                                 },
+                                                 {
+                                                     "t":  "2026-08-22T21:23:05",
+                                                     "p":  89.97,
+                                                     "a":  "InStock"
+                                                 }
+                                             ],
+                                 "url":  "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg",
+                                 "store":  "Zumub"
+                             },
+    "zumub-fusion::g500":  {
+                               "label":  "Zumub Whey Protein Fusion (500g)",
+                               "history":  [
+                                               {
+                                                   "t":  "2026-08-22T15:07:08",
+                                                   "p":  13.99,
+                                                   "a":  "InStock"
+                                               },
+                                               {
+                                                   "t":  "2026-08-22T21:23:05",
+                                                   "p":  13.99,
+                                                   "a":  "InStock"
+                                               }
+                                           ],
+                               "url":  "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g",
+                               "store":  "Zumub"
+                           },
+    "meta::fitnis-7n-whey80":  {
+                                   "lastCheckedAt":  "2026-08-22T21:23:05"
+                               },
+    "myprotein-impact::g1000":  {
+                                    "label":  "MyProtein Impact Whey Protein (1kg)",
+                                    "history":  [
+                                                    {
+                                                        "t":  "2026-08-22T15:07:08",
+                                                        "p":  23.67,
+                                                        "a":  "OutOfStock"
+                                                    },
+                                                    {
+                                                        "t":  "2026-08-22T21:23:05",
+                                                        "p":  23.67,
+                                                        "a":  "OutOfStock"
+                                                    }
+                                                ],
+                                    "url":  "https://www.myprotein.pt/p/sports-nutrition/impact-whey-protein/11790616/",
+                                    "store":  "MyProtein"
+                                },
+    "zumub-isolate::g900":  {
+                                "label":  "Zumub 100% Whey Isolate (900g)",
+                                "history":  [
+                                                {
+                                                    "t":  "2026-08-22T15:07:08",
+                                                    "p":  43,
+                                                    "a":  "InStock"
+                                                },
+                                                {
+                                                    "t":  "2026-08-22T21:23:05",
+                                                    "p":  43,
+                                                    "a":  "InStock"
+                                                }
+                                            ],
+                                "url":  "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg",
+                                "store":  "Zumub"
+                            },
+    "zumub-concentrate::g2000":  {
+                                     "label":  "Zumub 100% Whey Concentrate (2kg)",
+                                     "history":  [
+                                                     {
+                                                         "t":  "2026-08-22T15:07:08",
+                                                         "p":  64.98,
+                                                         "a":  "InStock"
+                                                     },
+                                                     {
+                                                         "t":  "2026-08-22T21:23:05",
+                                                         "p":  64.98,
+                                                         "a":  "InStock"
+                                                     }
+                                                 ],
+                                     "url":  "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326",
+                                     "store":  "Zumub"
+                                 },
+    "zumub-concentrate::g1000":  {
+                                     "label":  "Zumub 100% Whey Concentrate (1kg)",
+                                     "history":  [
+                                                     {
+                                                         "t":  "2026-08-22T15:07:08",
+                                                         "p":  38.99,
+                                                         "a":  "InStock"
+                                                     },
+                                                     {
+                                                         "t":  "2026-08-22T21:23:05",
+                                                         "p":  38.99,
+                                                         "a":  "InStock"
+                                                     }
+                                                 ],
+                                     "url":  "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326",
+                                     "store":  "Zumub"
+                                 },
+    "zumub-concentrate::g30":  {
+                                   "label":  "Zumub 100% Whey Concentrate (30g)",
+                                   "history":  [
+                                                   {
+                                                       "t":  "2026-08-22T15:07:08",
+                                                       "p":  1.25,
+                                                       "a":  "InStock"
+                                                   },
+                                                   {
+                                                       "t":  "2026-08-22T21:23:05",
+                                                       "p":  1.25,
+                                                       "a":  "InStock"
+                                                   }
+                                               ],
+                                   "url":  "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326",
+                                   "store":  "Zumub"
+                               },
+    "zumub-fusion::g4000":  {
+                                "label":  "Zumub Whey Protein Fusion (4kg)",
+                                "history":  [
+                                                {
+                                                    "t":  "2026-08-22T15:07:08",
+                                                    "p":  96.97,
+                                                    "a":  "InStock"
+                                                },
+                                                {
+                                                    "t":  "2026-08-22T21:23:05",
+                                                    "p":  96.97,
+                                                    "a":  "InStock"
+                                                }
+                                            ],
+                                "url":  "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g",
+                                "store":  "Zumub"
+                            },
+    "bulk-pure-whey::g2500":  {
+                                  "label":  "Bulk Pure Whey Protein (2,5kg)",
+                                  "history":  [
+                                                  {
+                                                      "t":  "2026-08-22T15:07:08",
+                                                      "p":  79.99,
+                                                      "a":  "InStock"
+                                                  },
+                                                  {
+                                                      "t":  "2026-08-22T21:23:05",
+                                                      "p":  79.99,
+                                                      "a":  "InStock"
+                                                  }
+                                              ],
+                                  "url":  "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000",
+                                  "store":  "Bulk"
+                              },
+    "zumub-isolate::g500":  {
+                                "label":  "Zumub 100% Whey Isolate (500g)",
+                                "history":  [
+                                                {
+                                                    "t":  "2026-08-22T15:07:08",
+                                                    "p":  23.99,
+                                                    "a":  "InStock"
+                                                },
+                                                {
+                                                    "t":  "2026-08-22T21:23:05",
+                                                    "p":  23.99,
+                                                    "a":  "InStock"
+                                                }
+                                            ],
+                                "url":  "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg",
+                                "store":  "Zumub"
+                            },
+    "zumub-isolate::g1000":  {
+                                 "label":  "Zumub 100% Whey Isolate (1kg)",
+                                 "history":  [
+                                                 {
+                                                     "t":  "2026-08-22T15:07:08",
+                                                     "p":  47,
+                                                     "a":  "InStock"
+                                                 },
+                                                 {
+                                                     "t":  "2026-08-22T21:23:05",
+                                                     "p":  47,
+                                                     "a":  "InStock"
+                                                 }
+                                             ],
+                                 "url":  "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg",
+                                 "store":  "Zumub"
+                             },
+    "meta::bulk-pure-whey":  {
+                                 "lastCheckedAt":  "2026-08-22T21:23:05"
+                             },
+    "zumub-concentrate::g4000":  {
+                                     "label":  "Zumub 100% Whey Concentrate (4kg)",
+                                     "history":  [
+                                                     {
+                                                         "t":  "2026-08-22T15:07:08",
+                                                         "p":  124.98,
+                                                         "a":  "InStock"
+                                                     },
+                                                     {
+                                                         "t":  "2026-08-22T21:23:05",
+                                                         "p":  124.98,
+                                                         "a":  "InStock"
+                                                     }
+                                                 ],
+                                     "url":  "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326",
+                                     "store":  "Zumub"
+                                 },
+    "meta::myprotein-impact":  {
+                                   "lastCheckedAt":  "2026-08-22T21:23:05"
+                               },
+    "zumub-isolate::g30":  {
+                               "label":  "Zumub 100% Whey Isolate (30g)",
+                               "history":  [
+                                               {
+                                                   "t":  "2026-08-22T15:07:08",
+                                                   "p":  1.59,
+                                                   "a":  "InStock"
+                                               },
+                                               {
+                                                   "t":  "2026-08-22T21:23:05",
+                                                   "p":  1.59,
+                                                   "a":  "InStock"
+                                               }
+                                           ],
+                               "url":  "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg",
+                               "store":  "Zumub"
+                           },
+    "bulk-pure-whey::g500":  {
+                                 "label":  "Bulk Pure Whey Protein (500g)",
+                                 "history":  [
+                                                 {
+                                                     "t":  "2026-08-22T15:07:08",
+                                                     "p":  19.99,
+                                                     "a":  "InStock"
+                                                 },
+                                                 {
+                                                     "t":  "2026-08-22T21:23:05",
+                                                     "p":  19.99,
+                                                     "a":  "InStock"
+                                                 }
+                                             ],
+                                 "url":  "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000",
+                                 "store":  "Bulk"
+                             }
+}

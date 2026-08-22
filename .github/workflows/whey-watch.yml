@@ -1,0 +1,74 @@
+name: whey-watch
+
+on:
+  schedule:
+    # a cada 3 horas, ao minuto 7 - o minuto 0 e o pico de carga do GitHub e as
+    # tarefas agendadas ficam em fila
+    - cron: '7 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      doctor:
+        description: 'Correr so o diagnostico (que lojas respondem a este IP)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: whey-watch
+  cancel-in-progress: false
+
+jobs:
+  ronda:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # ------------------------------------------------------------------
+      # Diagnostico: um pedido por loja, sem estado nem alertas. E o que
+      # responde a pergunta "os sites aceitam pedidos de um IP de datacenter?".
+      # Corre isto a mao na primeira vez, antes de confiares no agendamento.
+      # ------------------------------------------------------------------
+      - name: Diagnostico
+        if: ${{ inputs.doctor }}
+        shell: pwsh
+        run: ./whey-watch.ps1 -Doctor -SummaryPath $env:GITHUB_STEP_SUMMARY
+
+      # ------------------------------------------------------------------
+      # Ronda normal
+      # ------------------------------------------------------------------
+      - name: Verificar precos
+        if: ${{ !inputs.doctor }}
+        shell: pwsh
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: ./whey-watch.ps1 -StatusPath docs/status.json -SummaryPath $env:GITHUB_STEP_SUMMARY
+
+      - name: Gerar pagina
+        if: ${{ !inputs.doctor }}
+        shell: pwsh
+        run: ./build-page.ps1
+
+      # ------------------------------------------------------------------
+      # O historico vive no repo: cada ronda e um commit. Alem de persistir o
+      # estado entre execucoes, da um registo auditavel dos precos no git log.
+      # ------------------------------------------------------------------
+      - name: Gravar historico
+        if: ${{ !inputs.doctor }}
+        run: |
+          git config user.name  "whey-watch"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add whey-watch.state.json docs/
+          if git diff --quiet --cached; then
+            echo "sem alteracoes de preco nesta ronda"
+            exit 0
+          fi
+          git commit -m "precos $(date -u +'%Y-%m-%d %H:%M')Z [skip ci]"
+          git push || {
+            echo "push rejeitado, a rebasear e tentar de novo"
+            git pull --rebase --autostash
+            git push
+          }

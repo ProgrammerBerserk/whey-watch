@@ -1,0 +1,7 @@
+# o log e local a cada maquina/runner, nao faz parte do historico
+whey-watch.log
+*.tmp
+summary.md
+
+# o estado NAO esta aqui de proposito: e ele que carrega o historico de precos
+# entre execucoes na nuvem, por isso e commitado a cada ronda
