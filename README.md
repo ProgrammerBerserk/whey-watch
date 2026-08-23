@@ -102,6 +102,63 @@ whey-watch → Run workflow*, liga a opção **digest**. Manda a tabela actual p
 grupo. É a única forma de distinguir "não há promoções" de "está avariado" — em
 funcionamento normal o script fica calado de propósito.
 
+### 3b. Comandos do bot (opcional)
+
+O bot responde a `/best`, `/shop`, `/status` e `/update`. Vive num Cloudflare Worker
+porque um bot de Telegram precisa de algo à escuta, e um cron de 3 horas não está à
+escuta de nada. O plano gratuito da Cloudflare dá 100 mil pedidos por dia.
+
+Porque não polling dentro do Actions: o cron do GitHub é *best-effort*. A ranhura das
+21:07 desta montagem correu às 21:54 — 47 minutos de atraso. Um bot que responde meia
+hora depois lê-se como avariado.
+
+```bash
+cd bot && npx wrangler deploy
+```
+
+Antes disso, em [bot/wrangler.toml](bot/wrangler.toml) preenche `ALLOWED_CHAT_IDS`
+com o id do teu grupo. Depois os três segredos:
+
+```bash
+cd bot && npx wrangler secret put TELEGRAM_BOT_TOKEN
+```
+
+```bash
+cd bot && npx wrangler secret put GH_TOKEN
+```
+
+O `GH_TOKEN` é um PAT *fine-grained* limitado a este repositório, com **Actions:
+read and write** (para o `/update` disparar o workflow) e **Contents: read** (para
+ler o config e o `status.json`). Nada mais.
+
+Por fim aponta o Telegram ao Worker — o script gera o segredo do webhook e regista
+o menu de comandos:
+
+```bash
+cd bot; .\set-webhook.ps1 -WorkerUrl https://whey-watch-bot.<subdominio>.workers.dev
+```
+
+Ele imprime o segredo no fim; grava-o com `npx wrangler secret put
+TELEGRAM_WEBHOOK_SECRET`. Enquanto o Worker não o tiver, devolve 403 a tudo — de
+propósito.
+
+**Duas camadas de autorização, e ambas fazem falta.** O repositório é público e o
+username do bot é descobrível, portanto sem elas qualquer pessoa poderia disparar
+rondas na tua conta: o header `X-Telegram-Bot-Api-Secret-Token` prova que o pedido
+vem do Telegram, e `ALLOWED_CHAT_IDS` limita quem é servido. A chats desconhecidos o
+bot não responde nada — responder já revelaria que está activo.
+
+Para validar sem publicar (mocka o `fetch`, serve os ficheiros reais do repo e
+captura o que iria para o Telegram):
+
+```bash
+node bot/test-worker.mjs
+```
+
+O `/update` não empilha rondas: se já houver uma a correr, ou se a última arrancou há
+menos de 3 minutos, recusa em vez de disparar outra — duas rondas em paralelo dão
+commits em conflito.
+
 ### 4. Página
 
 *Settings → Pages → Source: Deploy from a branch*, ramo `main`, pasta `/docs`.

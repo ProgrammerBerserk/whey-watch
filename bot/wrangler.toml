@@ -1,0 +1,22 @@
+name = "whey-watch-bot"
+main = "worker.js"
+compatibility_date = "2026-08-01"
+
+# Sem KV nem D1: o Worker nao guarda estado. Le tudo do repositorio e usa a
+# propria API do GitHub para saber se ja ha uma ronda a correr.
+
+[vars]
+GH_OWNER = "ProgrammerBerserk"
+GH_REPO = "whey-watch"
+GH_WORKFLOW = "whey-watch.yml"
+GH_BRANCH = "main"
+
+# Chats servidos pelo bot, separados por virgula. Sem isto, qualquer pessoa que
+# descubra o username do bot pode disparar rondas na tua conta - o repositorio e
+# publico, logo o bot e descobrivel. Preenche com o id do teu grupo (negativo).
+ALLOWED_CHAT_IDS = ""
+
+# Segredos (NAO ficam aqui). Define-os com:
+#   wrangler secret put TELEGRAM_BOT_TOKEN
+#   wrangler secret put TELEGRAM_WEBHOOK_SECRET
+#   wrangler secret put GH_TOKEN
