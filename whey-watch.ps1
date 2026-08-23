@@ -69,6 +69,13 @@ function Test-IsWindows {
     return [bool] $IsWindows
 }
 
+function Test-IsCi {
+    # algumas lojas (EU Nutrition, Prozis) aceitam pedidos de um IP residencial e
+    # devolvem 403/429 a gamas de datacenter. os alvos marcados residentialOnly
+    # sao saltados aqui, em vez de gastarem tentativas condenadas a cada ronda.
+    return ([bool] $env:GITHUB_ACTIONS) -or ([bool] $env:CI)
+}
+
 # ================================================================= log
 
 function Write-Log {
@@ -567,6 +574,13 @@ if ($Doctor) {
             elseif ($m -match '(404|410)')  { $r.Http = '404'; $r.Nota = 'url mudou' }
             else                            { $r.Http = 'err'; $r.Nota = $m }
         }
+        # o -Doctor sonda tudo de proposito, mesmo os residentialOnly: e o unico
+        # sitio onde queres saber o que ESTE ip alcanca. mas marca-os, para um 403
+        # esperado nao ser lido como avaria
+        if (@($t.PSObject.Properties.Name) -contains 'residentialOnly' -and
+            $t.residentialOnly -and $r.Http -ne '200') {
+            $r.Nota = $r.Nota + '  [esperado: residentialOnly]'
+        }
         $health += $r
     }
 
@@ -603,6 +617,13 @@ foreach ($t in $targets) {
 
     # alguns sites (Prozis) limitam pedidos por IP com agressividade: respeitar
     # um intervalo minimo entre consultas, independente da cadencia do agendador
+    # lojas que so respondem a IPs residenciais: nao ha nada a ganhar em tentar
+    # da nuvem, e as tentativas condenadas sujavam o "N/M lojas responderam"
+    if ($tProps -contains 'residentialOnly' -and $t.residentialOnly -and (Test-IsCi)) {
+        Write-Log ('   {0} / {1}: residentialOnly, salto (este IP e de datacenter)' -f $t.store, $t.name)
+        continue
+    }
+
     $metaKey = 'meta::{0}' -f $t.id
     if ($tProps -contains 'checkEveryHours' -and $t.checkEveryHours -and -not $Force) {
         if ($state.ContainsKey($metaKey) -and $state[$metaKey].lastAttemptAt) {

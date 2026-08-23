@@ -166,6 +166,7 @@ O script corre em PowerShell 5.1 (Windows) e em PowerShell 7 (o runner Linux usa
 | `minGapSeconds` | intervalo mínimo entre pedidos ao domínio |
 | `maxAttempts` | tentativas antes de desistir do alvo |
 | `checkEveryHours` | não voltar a consultar antes disto, seja qual for a cadência |
+| `residentialOnly` | loja que só responde a IPs residenciais: saltada quando corre em CI |
 
 As gramagens também são detectadas a partir de `schema.org/weight` (o MyProtein
 publica-as) ou do nome da variante, portanto muitas vezes não precisas de `skuGrams`.
@@ -211,10 +212,22 @@ dois modos, claro e escuro.
 
 ## Limites conhecidos
 
-**O Prozis limita pedidos por IP com agressividade.** Responde às primeiras consultas e
-depois devolve `429` durante um bom período. Daí `checkEveryHours: 20` e
-`maxAttempts: 2` — desiste depressa e tenta amanhã. Quando falha, os outros alvos
-seguem normalmente. Se o vires sempre a falhar no log, é isso, não é bug.
+**Três lojas só respondem a IPs residenciais** e estão marcadas `residentialOnly`:
+
+| Loja | De casa | Da nuvem |
+|---|---|---|
+| EU Nutrition | 200 | `403` |
+| Prozis | 200 nas primeiras consultas, depois `429` | `429` à primeira |
+
+Na nuvem são saltadas de propósito — tentar não dá nada e as tentativas condenadas
+sujavam o "N/M lojas responderam". **Consequência prática: no GitHub Actions estas
+lojas não são vigiadas.** Se as quiseres a sério, tens de correr a tarefa local
+(`install-task.ps1`) num PC com IP residencial. Se um dia deixarem de bloquear, tira
+o campo do config.
+
+O `-Doctor` sonda-as sempre, de propósito — é o único sítio onde queres saber o que
+*este* IP alcança — mas anota `[esperado: residentialOnly]` para um 403 não ser lido
+como avaria.
 
 **A HSN não é vigiável e não vale a pena tentar.** A `hsnstore.pt` e a `hsnstore.eu`
 devolvem `403` a qualquer pedido — até à homepage, com um conjunto completo de

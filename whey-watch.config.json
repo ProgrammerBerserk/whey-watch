@@ -1,4 +1,4 @@
-{
+﻿{
   "settings": {
     "minDomainGapSeconds": 6,
     "maxAttempts": 4,
@@ -92,6 +92,7 @@
       "store": "EU Nutrition",
       "name": "EU Nutrition Muscle Whey Protein",
       "url": "https://eunutrition.com/muscle-whey-protein-2-kg/",
+      "residentialOnly": true,
       "parser": "jsonld",
       "proteinPer100g": 73.5,
       "defaultGrams": 2000,
@@ -102,6 +103,7 @@
       "store": "EU Nutrition",
       "name": "EU Nutrition 100% Whey Isolate",
       "url": "https://eunutrition.com/100-whey-isolate-evolution-2-kg/",
+      "residentialOnly": true,
       "parser": "jsonld",
       "proteinPer100g": 80.5,
       "defaultGrams": 2000,
@@ -115,6 +117,7 @@
       "parser": "jsonld",
       "proteinPer100g": 75,
       "defaultGrams": 2000,
+      "residentialOnly": true,
       "minGapSeconds": 25,
       "maxAttempts": 2,
       "checkEveryHours": 20,
@@ -122,3 +125,4 @@
     }
   ]
 }
+
