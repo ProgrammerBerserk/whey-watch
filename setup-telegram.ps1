@@ -135,6 +135,16 @@ Write-Host ('Escolhido: {0}  (chat_id {1})' -f $chat.Nome, $chat.Id) -Foreground
 
 # ---------------------------------------------------------------- mensagem de teste
 
+# com -NoSecrets so queres descobrir o chat_id; nao ha nada a validar e uma
+# segunda mensagem de teste no grupo e so ruido
+if ($NoSecrets) {
+    Write-Host ''
+    Write-Host ('chat_id = {0}' -f $chat.Id) -ForegroundColor Cyan
+    Write-Host ''
+    Write-Host 'Usa-o em ALLOWED_CHAT_IDS no bot/wrangler.toml.' -ForegroundColor DarkGray
+    exit 0
+}
+
 $txt = 'whey-watch ligado. E aqui que vao aparecer as promocoes.'
 try {
     [void] (Invoke-RestMethod -Uri ('https://api.telegram.org/bot{0}/sendMessage' -f $token) `
@@ -149,13 +159,6 @@ catch {
 }
 
 # ---------------------------------------------------------------- secrets
-
-if ($NoSecrets) {
-    Write-Host ''
-    Write-Host ('chat_id = {0}' -f $chat.Id) -ForegroundColor Cyan
-    Write-Host 'Grava-o tu no GitHub como TELEGRAM_CHAT_ID (e o token como TELEGRAM_BOT_TOKEN).'
-    exit 0
-}
 
 $gh = Find-Gh
 if (-not $gh) {
