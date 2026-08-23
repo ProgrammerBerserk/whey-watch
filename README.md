@@ -97,6 +97,11 @@ Actions*:
 O script activa o Telegram só pela presença dos segredos — localmente, sem eles
 definidos, não tenta enviar nada.
 
+**Para confirmar que o canal funciona**, sem esperar por uma promoção: em *Actions →
+whey-watch → Run workflow*, liga a opção **digest**. Manda a tabela actual para o
+grupo. É a única forma de distinguir "não há promoções" de "está avariado" — em
+funcionamento normal o script fica calado de propósito.
+
 ### 4. Página
 
 *Settings → Pages → Source: Deploy from a branch*, ramo `main`, pasta `/docs`.
@@ -130,6 +135,7 @@ estado) ou aponta para outro ficheiro:
 .\whey-watch.ps1 -Report          # tabela, sem gravar estado nem notificar
 .\whey-watch.ps1                  # ronda a sério: grava histórico e notifica
 .\whey-watch.ps1 -Doctor          # que lojas respondem a este IP
+.\whey-watch.ps1 -Digest          # manda a tabela actual, mesmo sem promoções
 .\whey-watch.ps1 -Only zumub      # só os alvos cujo id contenha "zumub"
 .\whey-watch.ps1 -Discover        # SKUs em bruto, para preencher skuGrams
 .\whey-watch.ps1 -Force           # notifica sem esperar alteração (testar toast)

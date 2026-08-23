@@ -4,6 +4,7 @@
     "maxAttempts": 4,
     "historyKeep": 150,
     "alertCooldownHours": 20,
+    "pageUrl": "https://programmerberserk.github.io/whey-watch/",
     "notify": {
       "toast": true,
       "telegram": {

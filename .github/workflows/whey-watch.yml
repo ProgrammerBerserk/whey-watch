@@ -11,6 +11,10 @@ on:
         description: 'Correr so o diagnostico (que lojas respondem a este IP)'
         type: boolean
         default: false
+      digest:
+        description: 'Mandar a tabela actual por Telegram, mesmo sem promocoes'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -45,7 +49,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: ./whey-watch.ps1 -StatusPath docs/status.json -SummaryPath $env:GITHUB_STEP_SUMMARY
+        run: ./whey-watch.ps1 -StatusPath docs/status.json -SummaryPath $env:GITHUB_STEP_SUMMARY ${{ inputs.digest && '-Digest' || '' }}
 
       - name: Gerar pagina
         if: ${{ !inputs.doctor }}

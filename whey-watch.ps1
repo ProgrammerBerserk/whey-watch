@@ -48,6 +48,7 @@ param(
     [switch] $Report,
     [switch] $Discover,
     [switch] $Doctor,
+    [switch] $Digest,
     [switch] $Force,
     [switch] $NoNotify,
     [string] $StatusPath,
@@ -502,6 +503,55 @@ function Resolve-Secret {
     return ''
 }
 
+function Format-Eur {
+    param($V)
+    if ($null -eq $V) { return '-' }
+    $s = [string]::Format([Globalization.CultureInfo]::InvariantCulture, '{0:N2}', [double] $V)
+    return ($s -replace '\.', ',')
+}
+
+function New-DigestText {
+    # resumo a pedido: e o que confirma que o canal funciona quando nao ha
+    # promocao nenhuma para anunciar
+    param($Rows, $Health, [string] $PageUrl, [int] $Top = 10)
+
+    $rows = @($Rows)
+    $out  = @()
+    $out += 'whey-watch - {0}' -f (Get-Date -Format 'dd/MM HH:mm')
+    $out += ''
+
+    $stock = @($rows | Where-Object { $null -ne $_.EurPor100gProt -and (Test-InStock $_.Stock) })
+    if ($stock.Count -gt 0) {
+        $b = $stock[0]
+        $out += 'Melhor valor em stock'
+        $out += ('  {0} EUR/100g proteina' -f (Format-Eur $b.EurPor100gProt))
+        $out += ('  {0}' -f $b.Produto)
+        $out += ('  {0} - {1} EUR a embalagem' -f $b.Loja, (Format-Eur $b.Preco))
+        $out += ''
+    }
+
+    $shown = @($rows | Where-Object { $null -ne $_.EurPor100gProt } | Select-Object -First $Top)
+    if ($shown.Count -gt 0) {
+        $out += ('Por euro/100g de proteina (top {0})' -f $shown.Count)
+        foreach ($r in $shown) {
+            $tag = ''
+            if (-not (Test-InStock $r.Stock)) { $tag = '  [esgotado]' }
+            if ($r.Alerta)                    { $tag = $tag + '  [PROMOCAO]' }
+            $out += ('  {0} - {1} - {2} EUR{3}' -f (Format-Eur $r.EurPor100gProt), $r.Produto, (Format-Eur $r.Preco), $tag)
+        }
+        $out += ''
+    }
+
+    $ok = @($Health | Where-Object { $_.Estado -eq 'ok' }).Count
+    $out += ('{0} de {1} lojas responderam' -f $ok, @($Health).Count)
+
+    if ($PageUrl) {
+        $out += ''
+        $out += $PageUrl
+    }
+    return ($out -join [Environment]::NewLine)
+}
+
 function Send-Telegram {
     param($Cfg, [string] $Text)
     if (-not $Cfg) { return }
@@ -908,6 +958,25 @@ if ($SummaryPath) {
         foreach ($h in $falhas) { $md += ('- **{0}** ({1}): {2}' -f $h.Loja, $h.Estado, $h.Nota) }
     }
     ($md -join [Environment]::NewLine) | Out-File -FilePath $SummaryPath -Encoding utf8 -Append
+}
+
+# o resumo a pedido sai mesmo sem alertas - e esse o ponto
+if ($Digest -and -not $NoNotify) {
+    $texto = New-DigestText -Rows $sorted -Health $health -PageUrl $settings.pageUrl
+    Write-Log '--- resumo:'
+    # mostrado sempre: se o Telegram nao estiver configurado, pediste um resumo e
+    # deves ve-lo, nao um silencio
+    Write-Host ''
+    Write-Host $texto
+    Write-Host ''
+    Send-Telegram -Cfg $settings.notify.telegram -Text $texto
+    if ($settings.notify.toast -and (Test-IsWindows)) {
+        $b = @($sorted | Where-Object { $null -ne $_.EurPor100gProt -and (Test-InStock $_.Stock) })
+        if ($b.Count -gt 0) {
+            [void] (Send-Toast -Title ('whey-watch: {0} precos' -f $rows.Count) `
+                               -Body ('Melhor em stock: {0} EUR/100g prot. - {1}' -f (Format-Eur $b[0].EurPor100gProt), $b[0].Produto))
+        }
+    }
 }
 
 if ($alerts.Count -eq 0) {
