@@ -41,9 +41,9 @@
 #>
 [CmdletBinding()]
 param(
-    [string] $ConfigPath = (Join-Path $PSScriptRoot 'whey-watch.config.json'),
-    [string] $StatePath  = (Join-Path $PSScriptRoot 'whey-watch.state.json'),
-    [string] $LogPath    = (Join-Path $PSScriptRoot 'whey-watch.log'),
+    [string] $ConfigPath,
+    [string] $StatePath,
+    [string] $LogPath,
     [string] $Only,
     [switch] $Report,
     [switch] $Discover,
@@ -56,6 +56,16 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'
+
+# $PSScriptRoot vem vazio em algumas formas de invocacao (powershell -File com
+# caminho relativo), e ai um Join-Path no valor por omissao do parametro estoura
+$base = $PSScriptRoot
+if (-not $base) { $base = (Get-Location).Path }
+
+if (-not $ConfigPath) { $ConfigPath = Join-Path $base 'whey-watch.config.json' }
+if (-not $StatePath)  { $StatePath  = Join-Path $base 'whey-watch.state.json' }
+if (-not $LogPath)    { $LogPath    = Join-Path $base 'whey-watch.log' }
+
 try {
     [Net.ServicePointManager]::SecurityProtocol =
         [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls11

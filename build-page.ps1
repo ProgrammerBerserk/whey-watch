@@ -19,12 +19,21 @@
 #>
 [CmdletBinding()]
 param(
-    [string] $StatusPath = (Join-Path $PSScriptRoot 'docs/status.json'),
-    [string] $StatePath  = (Join-Path $PSScriptRoot 'whey-watch.state.json'),
-    [string] $OutPath    = (Join-Path $PSScriptRoot 'docs/index.html')
+    [string] $StatusPath,
+    [string] $StatePath,
+    [string] $OutPath
 )
 
 $ErrorActionPreference = 'Stop'
+
+# $PSScriptRoot vem vazio em algumas formas de invocacao (powershell -File com
+# caminho relativo), e ai um Join-Path no valor por omissao do parametro estoura
+$base = $PSScriptRoot
+if (-not $base) { $base = (Get-Location).Path }
+
+if (-not $StatusPath) { $StatusPath = Join-Path $base 'docs/status.json' }
+if (-not $StatePath)  { $StatePath  = Join-Path $base 'whey-watch.state.json' }
+if (-not $OutPath)    { $OutPath    = Join-Path $base 'docs/index.html' }
 $inv = [Globalization.CultureInfo]::InvariantCulture
 
 if (-not (Test-Path $StatusPath)) { throw "status.json nao encontrado em $StatusPath - corre primeiro o whey-watch.ps1 -StatusPath" }

@@ -110,6 +110,20 @@ mexem nos preços de hora a hora e há limites de pedidos a respeitar.
 > O GitHub suspende workflows agendados em repos sem actividade há 60 dias. Como cada
 > ronda faz commit do histórico, isto mantém-se vivo sozinho.
 
+## Escolhe uma instância: nuvem **ou** local
+
+Não corras as duas contra o mesmo repositório. O `whey-watch.state.json`, o
+`docs/status.json` e o `docs/index.html` são escritos a cada ronda, portanto duas
+instâncias a fazer commit dão conflito de merge em todas as sincronizações — e são
+ficheiros gerados, onde um `git checkout --ours` descarta observações em silêncio.
+
+Se precisares de correr localmente com a nuvem activa, usa `-Report` (não grava
+estado) ou aponta para outro ficheiro:
+
+```powershell
+.\whey-watch.ps1 -StatePath .\local.state.json -StatusPath .\local\status.json
+```
+
 ## Correr localmente
 
 ```powershell
