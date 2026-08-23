@@ -57,12 +57,29 @@ if ($Info) {
     $r = Invoke-RestMethod -Uri ($api -f $token, 'getWebhookInfo') -TimeoutSec 30
     $i = $r.result
     Write-Host ''
-    Write-Host ('url                  : {0}' -f $(if ($i.url) { $i.url } else { '(nenhum)' }))
-    Write-Host ('secret token definido: {0}' -f $i.has_custom_certificate)
-    Write-Host ('updates pendentes    : {0}' -f $i.pending_update_count)
+    Write-Host ('url                : {0}' -f $(if ($i.url) { $i.url } else { '(nenhum)' }))
+    Write-Host ('certificado proprio: {0}' -f $i.has_custom_certificate)
+    Write-Host ('updates pendentes  : {0}' -f $i.pending_update_count)
+    if ($i.max_connections)  { Write-Host ('ligacoes maximas   : {0}' -f $i.max_connections) }
+    if ($i.allowed_updates)  { Write-Host ('updates permitidos : {0}' -f ($i.allowed_updates -join ', ')) }
+
     if ($i.last_error_message) {
-        Write-Host ('ultimo erro          : {0} ({1})' -f $i.last_error_message, $i.last_error_date) -ForegroundColor Yellow
+        $when = ([DateTimeOffset]::FromUnixTimeSeconds([int64] $i.last_error_date)).LocalDateTime
+        Write-Host ''
+        Write-Host ('ultima falha de entrega: {0}' -f $i.last_error_message) -ForegroundColor Yellow
+        Write-Host ('                        {0:dd/MM HH:mm}' -f $when) -ForegroundColor Yellow
+        Write-Host ''
+        Write-Host 'Um 403 aqui significa que o segredo difere entre o Telegram e o Worker.' -ForegroundColor DarkGray
     }
+    else {
+        Write-Host ''
+        Write-Host 'Sem falhas de entrega registadas.' -ForegroundColor Green
+    }
+
+    # o Telegram nao expoe se o secret_token esta definido, de proposito. a unica
+    # forma de o saber e pela ausencia de 403 nas entregas, acima
+    Write-Host ''
+    Write-Host 'Nota: o Telegram nao revela o secret_token, portanto nao aparece aqui.' -ForegroundColor DarkGray
     exit 0
 }
 

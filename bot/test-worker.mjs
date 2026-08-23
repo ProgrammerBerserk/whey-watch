@@ -175,6 +175,43 @@ console.log('\n=== /help');
 r = await run('/start');
 check('/start responde com a ajuda', r.sent.length === 1 && /\/best/.test(r.sent[0].text));
 
+console.log('\n=== mensagens de erro do GitHub');
+
+// forcar respostas de erro nas leituras de ficheiros
+const realFetch = globalThis.fetch;
+function withGhStatus(code) {
+  globalThis.fetch = async (url, init = {}) => {
+    const u = String(url);
+    if (u.includes('api.github.com')) {
+      return new Response('{"message":"Bad credentials"}', { status: code });
+    }
+    return realFetch(url, init);
+  };
+}
+
+withGhStatus(401);
+r = await run('/best');
+check(
+  '401 explica que o GH_TOKEN e invalido',
+  r.sent.length === 1 && /GH_TOKEN.*nao e uma credencial valida/s.test(r.sent[0].text),
+  r.sent[0]?.text?.slice(0, 90)
+);
+check('401 diz o que correr para corrigir', /set-gh-token\.ps1/.test(r.sent[0].text));
+
+withGhStatus(403);
+r = await run('/shop');
+check(
+  '403 explica que faltam permissoes',
+  r.sent.length === 1 && /nao tem permissao/.test(r.sent[0].text),
+  r.sent[0]?.text?.slice(0, 90)
+);
+
+withGhStatus(404);
+r = await run('/status');
+check('404 fala do scope do token', r.sent.length === 1 && /scope/.test(r.sent[0].text));
+
+globalThis.fetch = realFetch;
+
 console.log('\n=== alias e sufixo do bot');
 r = await run('/best@whey_watch_bot');
 check('aceita /cmd@nomedobot', r.sent.length === 1);

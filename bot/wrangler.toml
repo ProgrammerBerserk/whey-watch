@@ -14,7 +14,7 @@ GH_BRANCH = "main"
 # Chats servidos pelo bot, separados por virgula. Sem isto, qualquer pessoa que
 # descubra o username do bot pode disparar rondas na tua conta - o repositorio e
 # publico, logo o bot e descobrivel. Preenche com o id do teu grupo (negativo).
-ALLOWED_CHAT_IDS = ""
+ALLOWED_CHAT_IDS = "-5417023147"
 
 # Segredos (NAO ficam aqui). Define-os com:
 #   wrangler secret put TELEGRAM_BOT_TOKEN

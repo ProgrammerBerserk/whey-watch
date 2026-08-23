@@ -300,9 +300,33 @@ async function ghApi(env, path, method = 'GET', body) {
   if (res.status === 204) return {};
   const txt = await res.text();
   if (!res.ok) {
-    throw new Error(`GitHub ${res.status} em ${path}: ${txt.slice(0, 200)}`);
+    throw new Error(ghError(res.status, path, txt));
   }
   return txt ? JSON.parse(txt) : {};
+}
+
+// um "GitHub 401" cru no grupo nao diz a ninguem o que fazer
+function ghError(status, path, txt) {
+  if (status === 401) {
+    return (
+      'O GH_TOKEN do Worker nao e uma credencial valida (401). Esta errado, ' +
+      'expirado, ou foi gravado o valor de outro segredo. Corre ' +
+      'bot/set-gh-token.ps1 para validar e regravar.'
+    );
+  }
+  if (status === 403) {
+    return (
+      'O GH_TOKEN e valido mas nao tem permissao para isto (403). O bot precisa ' +
+      'de Actions: read and write e Contents: read neste repositorio.'
+    );
+  }
+  if (status === 404) {
+    return (
+      `Nao encontrei ${path} (404). Ou o token nao tem este repositorio no ` +
+      'scope, ou o caminho/nome do workflow mudou.'
+    );
+  }
+  return `GitHub ${status} em ${path}: ${String(txt).slice(0, 200)}`;
 }
 
 async function ghJson(env, filePath) {
@@ -317,7 +341,7 @@ async function ghJson(env, filePath) {
     },
   });
   if (!res.ok) {
-    throw new Error(`nao li ${filePath}: GitHub ${res.status}`);
+    throw new Error(ghError(res.status, filePath, await res.text().catch(() => '')));
   }
   return res.json();
 }
