@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T21:50:19.2020472+00:00",
+  "generatedAt": "2026-08-24T03:35:23.4912036+00:00",
   "rows": [
     {
       "Key": "myprotein-impact::g1000",
@@ -12,7 +12,7 @@
       "Stock": "OutOfStock",
       "MinVisto": 23.67,
       "Mediana": 23.67,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.myprotein.pt/p/sports-nutrition/impact-whey-protein/11790616/"
     },
@@ -27,7 +27,7 @@
       "Stock": "OutOfStock",
       "MinVisto": 48.99,
       "Mediana": 48.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://fitnis.pt/pt/proteinas/1178-7-nutrition-whey-protein-80-2kg.html"
     },
@@ -42,7 +42,7 @@
       "Stock": "InStock",
       "MinVisto": 96.97,
       "Mediana": 96.97,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g"
     },
@@ -57,7 +57,7 @@
       "Stock": "InStock",
       "MinVisto": 48.99,
       "Mediana": 48.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g"
     },
@@ -72,7 +72,7 @@
       "Stock": "InStock",
       "MinVisto": 26.99,
       "Mediana": 26.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g"
     },
@@ -87,7 +87,7 @@
       "Stock": "InStock",
       "MinVisto": 13.99,
       "Mediana": 13.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g"
     },
@@ -102,7 +102,7 @@
       "Stock": "InStock",
       "MinVisto": 149.99,
       "Mediana": 149.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -117,7 +117,7 @@
       "Stock": "InStock",
       "MinVisto": 124.98,
       "Mediana": 124.98,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326"
     },
@@ -132,7 +132,7 @@
       "Stock": "InStock",
       "MinVisto": 79.99,
       "Mediana": 79.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -147,7 +147,7 @@
       "Stock": "InStock",
       "MinVisto": 64.98,
       "Mediana": 64.98,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326"
     },
@@ -162,7 +162,7 @@
       "Stock": "InStock",
       "MinVisto": 34.99,
       "Mediana": 34.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -177,7 +177,7 @@
       "Stock": "InStock",
       "MinVisto": 175.98,
       "Mediana": 175.98,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg"
     },
@@ -192,7 +192,7 @@
       "Stock": "InStock",
       "MinVisto": 89.97,
       "Mediana": 89.97,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg"
     },
@@ -207,22 +207,7 @@
       "Stock": "InStock",
       "MinVisto": 47.0,
       "Mediana": 47.0,
-      "Obs": 18,
-      "Alerta": "",
-      "Url": "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg"
-    },
-    {
-      "Key": "zumub-isolate::g900",
-      "Loja": "Zumub",
-      "Produto": "Zumub 100% Whey Isolate (900g)",
-      "Sku": "21303",
-      "Preco": 43.0,
-      "Tabela": 54.99,
-      "EurPor100gProt": 5.47,
-      "Stock": "InStock",
-      "MinVisto": 43.0,
-      "Mediana": 43.0,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg"
     },
@@ -237,9 +222,24 @@
       "Stock": "InStock",
       "MinVisto": 38.99,
       "Mediana": 38.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326"
+    },
+    {
+      "Key": "zumub-isolate::g900",
+      "Loja": "Zumub",
+      "Produto": "Zumub 100% Whey Isolate (900g)",
+      "Sku": "21303",
+      "Preco": 43.0,
+      "Tabela": 54.99,
+      "EurPor100gProt": 5.47,
+      "Stock": "InStock",
+      "MinVisto": 43.0,
+      "Mediana": 43.0,
+      "Obs": 19,
+      "Alerta": "",
+      "Url": "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg"
     },
     {
       "Key": "zumub-isolate::g500",
@@ -252,7 +252,7 @@
       "Stock": "InStock",
       "MinVisto": 23.99,
       "Mediana": 23.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg"
     },
@@ -267,7 +267,7 @@
       "Stock": "InStock",
       "MinVisto": 19.96,
       "Mediana": 19.96,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326"
     },
@@ -282,7 +282,7 @@
       "Stock": "InStock",
       "MinVisto": 19.99,
       "Mediana": 19.99,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -297,7 +297,7 @@
       "Stock": "InStock",
       "MinVisto": 1.25,
       "Mediana": 1.25,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/100-whey-concentrate-1kg-p-10326"
     },
@@ -312,7 +312,7 @@
       "Stock": "InStock",
       "MinVisto": 1.59,
       "Mediana": 1.59,
-      "Obs": 18,
+      "Obs": 19,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/whey-isolate/100-whey-isolate-flav-1kg"
     }
