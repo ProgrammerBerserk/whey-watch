@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T14:23:08.7570417+00:00",
+  "generatedAt": "2026-08-25T14:29:36.4817464+00:00",
   "rows": [
     {
       "Key": "myprotein-impact::g1000",
@@ -12,7 +12,7 @@
       "Stock": "OutOfStock",
       "MinVisto": 23.67,
       "Mediana": 23.67,
-      "Obs": 29,
+      "Obs": 30,
       "Alerta": "",
       "Url": "https://www.myprotein.pt/p/sports-nutrition/impact-whey-protein/11790616/"
     },
@@ -27,7 +27,7 @@
       "Stock": "OutOfStock",
       "MinVisto": 48.99,
       "Mediana": 48.99,
-      "Obs": 28,
+      "Obs": 29,
       "Alerta": "",
       "Url": "https://fitnis.pt/pt/proteinas/1178-7-nutrition-whey-protein-80-2kg.html"
     },
@@ -42,7 +42,7 @@
       "Stock": "InStock",
       "MinVisto": 96.97,
       "Mediana": 96.97,
-      "Obs": 29,
+      "Obs": 30,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g"
     },
@@ -57,7 +57,7 @@
       "Stock": "InStock",
       "MinVisto": 48.98,
       "Mediana": 48.99,
-      "Obs": 29,
+      "Obs": 30,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g"
     },
@@ -72,7 +72,7 @@
       "Stock": "InStock",
       "MinVisto": 26.99,
       "Mediana": 26.99,
-      "Obs": 29,
+      "Obs": 30,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g"
     },
@@ -87,7 +87,7 @@
       "Stock": "InStock",
       "MinVisto": 13.99,
       "Mediana": 13.99,
-      "Obs": 29,
+      "Obs": 30,
       "Alerta": "",
       "Url": "https://www.zumub.com/PT/proteinas/whey/whey-protein-fusion-500g"
     },
@@ -102,7 +102,7 @@
       "Stock": "InStock",
       "MinVisto": 149.99,
       "Mediana": 149.99,
-      "Obs": 29,
+      "Obs": 30,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -117,7 +117,7 @@
       "Stock": "InStock",
       "MinVisto": 79.99,
       "Mediana": 79.99,
-      "Obs": 29,
+      "Obs": 30,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -132,7 +132,7 @@
       "Stock": "InStock",
       "MinVisto": 34.99,
       "Mediana": 34.99,
-      "Obs": 29,
+      "Obs": 30,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -147,7 +147,7 @@
       "Stock": "InStock",
       "MinVisto": 19.99,
       "Mediana": 19.99,
-      "Obs": 29,
+      "Obs": 30,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     }
