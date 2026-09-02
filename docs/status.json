@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T06:30:36.1498336+00:00",
+  "generatedAt": "2026-09-02T09:21:26.7515616+00:00",
   "rows": [
     {
       "Key": "myprotein-impact::g1000",
@@ -12,9 +12,39 @@
       "Stock": "OutOfStock",
       "MinVisto": 23.67,
       "Mediana": 23.67,
-      "Obs": 77,
+      "Obs": 78,
       "Alerta": "",
       "Url": "https://www.myprotein.pt/p/sports-nutrition/impact-whey-protein/11790616/"
+    },
+    {
+      "Key": "bulk-pure-whey::g4000",
+      "Loja": "Bulk",
+      "Produto": "Bulk Pure Whey Protein (4kg)",
+      "Sku": "BPB-PWPC-CHOC-4000",
+      "Preco": 119.99,
+      "Tabela": null,
+      "EurPor100gProt": 4.22,
+      "Stock": "InStock",
+      "MinVisto": null,
+      "Mediana": null,
+      "Obs": 0,
+      "Alerta": "",
+      "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
+    },
+    {
+      "Key": "bulk-pure-whey::g2000",
+      "Loja": "Bulk",
+      "Produto": "Bulk Pure Whey Protein (2kg)",
+      "Sku": "BPB-PWPC-CHOC-2000",
+      "Preco": 62.99,
+      "Tabela": null,
+      "EurPor100gProt": 4.44,
+      "Stock": "InStock",
+      "MinVisto": null,
+      "Mediana": null,
+      "Obs": 0,
+      "Alerta": "",
+      "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
     {
       "Key": "fitnis-7n-whey80::g2000",
@@ -27,9 +57,24 @@
       "Stock": "OutOfStock",
       "MinVisto": 48.99,
       "Mediana": 48.99,
-      "Obs": 76,
+      "Obs": 77,
       "Alerta": "",
       "Url": "https://fitnis.pt/pt/proteinas/1178-7-nutrition-whey-protein-80-2kg.html"
+    },
+    {
+      "Key": "bulk-pure-whey::g900",
+      "Loja": "Bulk",
+      "Produto": "Bulk Pure Whey Protein (900g)",
+      "Sku": "BPB-PWPC-CHOC-0900",
+      "Preco": 29.99,
+      "Tabela": null,
+      "EurPor100gProt": 4.69,
+      "Stock": "InStock",
+      "MinVisto": null,
+      "Mediana": null,
+      "Obs": 0,
+      "Alerta": "",
+      "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
     {
       "Key": "bulk-pure-whey::g5000",
@@ -42,7 +87,7 @@
       "Stock": "InStock",
       "MinVisto": 149.99,
       "Mediana": 149.99,
-      "Obs": 77,
+      "Obs": 78,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -57,7 +102,7 @@
       "Stock": "InStock",
       "MinVisto": 79.99,
       "Mediana": 79.99,
-      "Obs": 77,
+      "Obs": 78,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -72,7 +117,22 @@
       "Stock": "InStock",
       "MinVisto": 34.99,
       "Mediana": 34.99,
-      "Obs": 77,
+      "Obs": 78,
+      "Alerta": "",
+      "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
+    },
+    {
+      "Key": "bulk-pure-whey::g450",
+      "Loja": "Bulk",
+      "Produto": "Bulk Pure Whey Protein (450g)",
+      "Sku": "BPB-PWPC-CHOC-0450",
+      "Preco": 17.99,
+      "Tabela": null,
+      "EurPor100gProt": 5.63,
+      "Stock": "InStock",
+      "MinVisto": null,
+      "Mediana": null,
+      "Obs": 0,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -87,7 +147,7 @@
       "Stock": "InStock",
       "MinVisto": 19.99,
       "Mediana": 19.99,
-      "Obs": 77,
+      "Obs": 78,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     }
@@ -121,7 +181,7 @@
       "Loja": "Bulk",
       "Alvo": "bulk-pure-whey",
       "Estado": "ok",
-      "Nota": "79 ofertas"
+      "Nota": "95 ofertas"
     },
     {
       "Loja": "MyProtein",
