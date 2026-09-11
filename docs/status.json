@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T03:20:57.1302713+00:00",
+  "generatedAt": "2026-09-11T06:25:56.9637424+00:00",
   "rows": [
     {
       "Key": "myprotein-impact::g1000",
@@ -27,7 +27,7 @@
       "Stock": "InStock",
       "MinVisto": 119.99,
       "Mediana": 124.99,
-      "Obs": 72,
+      "Obs": 73,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -42,7 +42,7 @@
       "Stock": "OutOfStock",
       "MinVisto": 48.99,
       "Mediana": 69.99,
-      "Obs": 149,
+      "Obs": 150,
       "Alerta": "",
       "Url": "https://fitnis.pt/pt/proteinas/1178-7-nutrition-whey-protein-80-2kg.html"
     },
@@ -57,7 +57,7 @@
       "Stock": "InStock",
       "MinVisto": 62.99,
       "Mediana": 64.99,
-      "Obs": 72,
+      "Obs": 73,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -72,7 +72,7 @@
       "Stock": "InStock",
       "MinVisto": 29.99,
       "Mediana": 29.99,
-      "Obs": 72,
+      "Obs": 73,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -132,7 +132,7 @@
       "Stock": "InStock",
       "MinVisto": 17.99,
       "Mediana": 17.99,
-      "Obs": 72,
+      "Obs": 73,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
