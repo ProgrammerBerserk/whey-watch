@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T21:19:58.6045860+00:00",
+  "generatedAt": "2026-09-13T00:28:13.9830851+00:00",
   "rows": [
     {
       "Key": "myprotein-impact::g1000",
@@ -27,7 +27,7 @@
       "Stock": "InStock",
       "MinVisto": 119.99,
       "Mediana": 124.99,
-      "Obs": 86,
+      "Obs": 87,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -57,7 +57,7 @@
       "Stock": "InStock",
       "MinVisto": 62.99,
       "Mediana": 64.99,
-      "Obs": 86,
+      "Obs": 87,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -72,7 +72,7 @@
       "Stock": "InStock",
       "MinVisto": 29.99,
       "Mediana": 29.99,
-      "Obs": 86,
+      "Obs": 87,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
@@ -132,7 +132,7 @@
       "Stock": "InStock",
       "MinVisto": 17.99,
       "Mediana": 17.99,
-      "Obs": 86,
+      "Obs": 87,
       "Alerta": "",
       "Url": "https://www.bulk.com/pt/products/proteina-whey/bpb-wpc8-0000"
     },
